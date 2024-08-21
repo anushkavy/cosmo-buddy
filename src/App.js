@@ -20,7 +20,7 @@ function App() {
     equipReq: "",
   });
   const [events, setEvents] = useState([]);
-  console.log("Events data debug", events);
+  console.log("Events length", events.length);
 
   useEffect(() => {
     onSnapshot(eventsCollection, function (snapshot) {
@@ -49,17 +49,35 @@ function App() {
       }));
       setEvents(eventsArr);
     });
+
+    setFormData({
+      eventTitle: "",
+      eventDescription: "",
+      authorName: "",
+      authorEmail: "",
+      city: "",
+      fullAdd: "",
+      dateTime: "",
+      equipReq: "",
+    });
+
     handleCreateToggle();
   }
-
+  console.log(events);
   return (
     <div className="App">
       <Navbar handleToggle={handleCreateToggle} />
       <Hero>
         <div className="cards">
-          {events.map((event) => {
-            return <Card key={event.id} data={event.data} />;
-          })}
+          {events.length === 0 ? (
+            <h3 className="noevent white fw400">
+              Events are yet to be scheduled.
+            </h3>
+          ) : (
+            events.map((event) => {
+              return <Card key={event.id} data={event.data} />;
+            })
+          )}
         </div>
         {toggleCreate ? (
           <CreateEvent

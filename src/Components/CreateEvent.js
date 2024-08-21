@@ -79,7 +79,9 @@ export default function CreateEvent({
                 onChange={handleChange}
                 name="city"
               >
-                <option value="Delhi">Delhi</option>
+                <option value="Delhi" defaultValue="none">
+                  Delhi
+                </option>
                 <option value="Bangalore">Bangalore</option>
                 <option value="Mumbai">Mumbai</option>
                 <option value="Gurgaon">Gurgaon</option>
@@ -97,6 +99,17 @@ export default function CreateEvent({
                 onChange={handleChange}
                 name="fullAdd"
                 value={formData.fullAdd}
+              />
+            </div>
+
+            <div className="create-event-form-labelInput">
+              <label htmlFor="dateTime">Date & Time</label>
+              <input
+                type="datetime-local"
+                id="dateTime"
+                onChange={handleChange}
+                name="dateTime"
+                value={formData.dateTime}
               />
             </div>
 
