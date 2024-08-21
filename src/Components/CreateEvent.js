@@ -79,7 +79,7 @@ export default function CreateEvent({
                 onChange={handleChange}
                 name="city"
               >
-                <option value="Delhi" defaultValue="none">
+                <option value="Delhi" selected="selected">
                   Delhi
                 </option>
                 <option value="Bangalore">Bangalore</option>

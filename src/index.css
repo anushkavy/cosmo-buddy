@@ -80,7 +80,8 @@ nav> h1{
     padding: 0 30px;
     flex-wrap: wrap ;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
+
 }
 
 .card{
@@ -95,12 +96,13 @@ nav> h1{
     text-align: start;
     line-height: 110%;
     margin: 0 15px 20px 0;
+    
 }
 
 .card-image{
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 
 .card-content{
@@ -115,6 +117,7 @@ nav> h1{
     font-size: 20px;
     font-weight: 500; 
     margin-bottom: 7px;
+    line-height: 110%;
 }
 
 .card-location{
@@ -124,9 +127,28 @@ nav> h1{
     column-gap: 5px;
 }
 
+.card-desc{
+    font-size: 14px;
+}
+
+.card-heads{
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+
 .card-date{
     color: #51466E;
     margin-top: 7px;
+}
+
+.card-readmore-btn{
+    border-radius: 10px;
+    background: #1E1E1E;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
 }
 
 /* CreateEvent Modal */
