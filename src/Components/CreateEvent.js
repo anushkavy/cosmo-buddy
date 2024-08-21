@@ -1,6 +1,11 @@
 import { FaTimes } from "react-icons/fa";
 
-export default function CreateEvent({ handleToggle, formData, setFormData }) {
+export default function CreateEvent({
+  handleToggle,
+  formData,
+  setFormData,
+  createEvent,
+}) {
   function handleChange(event) {
     const { name, value } = event.target;
     setFormData((prevFormData) => {
@@ -18,7 +23,8 @@ export default function CreateEvent({ handleToggle, formData, setFormData }) {
           <FaTimes className="faTimes" />
         </button>
         <h3 className="create-event-heading">Create Event</h3>
-        <form>
+
+        <form onSubmit={createEvent}>
           <div className="create-event-form-inputs">
             <div className="create-event-form-labelInput">
               <label htmlFor="eventTitle">Event Title</label>
@@ -106,10 +112,10 @@ export default function CreateEvent({ handleToggle, formData, setFormData }) {
             </div>
           </div>
           <button
-            onClick={handleToggle}
+            type="submit"
             className="create-event-saveBtn fs16 fw400 white"
           >
-            Submit
+            Save
           </button>
         </form>
       </div>
