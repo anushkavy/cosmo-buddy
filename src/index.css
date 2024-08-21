@@ -4,9 +4,9 @@
 }
 
 .App{
-    height: 100vh;
-background: linear-gradient(180deg, #000 0%, #23202B 100%);
-font-family: "Poppins" , sans-serif;
+
+    background: linear-gradient(180deg, #000 0%, #23202B 100%);
+    font-family: "Poppins" , sans-serif;
 }
 
 .white{
@@ -74,16 +74,25 @@ nav> h1{
 }
 
 /* Card */
+.cards{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    flex-wrap: wrap;
+}
+
 .card{
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #FFF;
     padding: 10px;
+    width: fit-content;
     max-width: 22%;
     border-radius: 10px;
     text-align: start;
     line-height: 110%;
+    margin-bottom: 20px;
 }
 
 .card-image{
@@ -114,4 +123,100 @@ nav> h1{
 .card-date{
     color: #51466E;
     margin-top: 7px;
+}
+
+/* CreateEvent Modal */
+
+.create-event-bg{
+    padding: 10px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #999 0%, #FFF 100%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.create-event-main{
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.faTimes{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    color: rgba(0, 0, 0, 0.73);
+    cursor: pointer;
+}
+
+.create-event-main>form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.create-event-heading{
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    margin: 25px 0;
+}
+
+.create-event-form-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+.create-event-form-labelInput{
+    display: flex;
+    font-weight: 400;
+    line-height: 110%;
+    font-size: 16px;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.create-event-form-labelInput > input{
+    border-radius: 5px;
+    border: 1px solid #8A8A8A;
+    width: 70%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+.create-event-form-labelInput>input:focus{
+    border: 1px solid #414141;
+}
+
+.create-event-form-labelInput>textarea {
+    border-radius: 5px;
+    border: 1px solid #8A8A8A;
+    width: 70%;
+    padding: 12px 20px;
+    box-sizing: border-box;
+}
+
+.create-event-form-labelInput>textarea:focus {
+    border: 1px solid #414141;
+}
+
+.create-event-form-labelInput> select{
+    width: 70%;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 5px;
+    border: 1px solid #414141;
+}
+
+.create-event-saveBtn{
+    border-radius: 10px;
+    background: #1E1E1E;
+    padding: 8px 12px;
+    margin-top: 10px;
 }
