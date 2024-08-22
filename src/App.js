@@ -6,6 +6,7 @@ import CreateEvent from "./Components/CreateEvent";
 import { useEffect, useState } from "react";
 import { onSnapshot, addDoc } from "firebase/firestore";
 import { eventsCollection } from "./firebase";
+import Confetti from "react-confetti";
 
 function App() {
   const [toggleCreate, setToggleCreate] = useState(false);
@@ -20,6 +21,7 @@ function App() {
     equipReq: "",
   });
   const [events, setEvents] = useState([]);
+  const [eventSaved, setEventSaved] = useState(false);
   console.log("Events length", events.length);
 
   useEffect(() => {
@@ -31,6 +33,12 @@ function App() {
       setEvents(eventsArr);
     });
   }, []);
+
+  if (eventSaved) {
+    setTimeout(() => {
+      setEventSaved((prevState) => !prevState);
+    }, 3000);
+  }
 
   function handleCreateToggle() {
     setToggleCreate((prevState) => !prevState);
@@ -62,10 +70,12 @@ function App() {
     });
 
     handleCreateToggle();
+    setEventSaved((prevState) => !prevState);
   }
   console.log(events);
   return (
     <div className="App">
+      {eventSaved && <Confetti />};
       <Navbar handleToggle={handleCreateToggle} />
       <Hero>
         <div className="cards">
