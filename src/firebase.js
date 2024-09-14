@@ -1,8 +1,10 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection } from "firebase/firestore";
 
+const apiKey = process.env.REACT_APP_FIREBASE_API_KEY;
+
 const firebaseConfig = {
-  apiKey: "AIzaSyB24EAEWnVF1GYKD7ZOcG9WcoO3dzVledU",
+  apiKey: { apiKey },
   authDomain: "cosmo-buddy.firebaseapp.com",
   projectId: "cosmo-buddy",
   storageBucket: "cosmo-buddy.appspot.com",
